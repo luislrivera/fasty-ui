@@ -1,45 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import NavbarItem from '../components/NavbarItem.astro';
+import Navbar from '../components/Navbar.astro';
 ---
 <Layout title='Inicio'>
-  <header class="h-full px-4 mt-2">
-      <div class="flex items-center justify-between">
-        <a class="z-20 text-xl text-white bg-blue-700 hover:bg-blue-800 rounded-lg px-5 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 active:scale-95 duration-150" href="./">
-          FastyUI
-        </a>
 
-        <div class="flex items-center justify-end">
-          <input type="checkbox" name="hamburger" id="hamburger" class="peer" hidden>
-          <label for="hamburger" class="peer-checked:hamburger cursor-pointer lg:hidden p-3 rounded-lg hover:bg-gray-100 transition duration-150">
-            <div aria-hidden="true" class="m-auto h-0.5 w-6 rounded bg-sky-900 transition duration-300"></div>
-            <div aria-hidden="true" class="m-auto mt-2 h-0.5 w-6 rounded bg-sky-900 transition duration-300"></div>
-          </label>
-
-          <div class="peer-checked:translate-x-0 fixed inset-0 w-56 translate-x-[-100%] bg-white border-r shadow-xl transition duration-300 lg:border-r-0 lg:w-auto lg:static lg:shadow-none lg:translate-x-0">
-            <div class="flex flex-col h-full justify-between lg:items-center lg:flex-row">
-              <ul class="font-bold ml-6 h-full flex flex-col items-start justify-center lg:ml-0 lg:h-auto lg:flex-row lg:items-center">
-                <NavbarItem href='./'>Inicio</NavbarItem>
-                <NavbarItem href='./'>Componentes</NavbarItem>
-                <NavbarItem href='./'>Acerca de</NavbarItem>
-              </ul>
-            
-            
-
-            </div>
-          </div>
-        </div>
-      </div>
+  <header class="h-screen">
+    <Navbar />    
+    <main class="flex flex-col items-center justify-center h-full gap-6">
+      <h1 class="text-transparent font-bold text-6xl bg-gradient-to-r from-blue-700 via-purple-500 to-cyan-500 bg-clip-text">Construye sitios web hermosos</h1>
+      <h2 class="font -bold text-4xl">Céntrate en la lógica, nosotros en la UI</h2>
+    </main>
   </header>
 </Layout>
-<style>
-@tailwind components;
-@layer components {
-  .hamburger div:first-child {
-    @apply rotate-45 translate-y-1.5;
-  }
-  .hamburger div:last-child {
-    @apply -rotate-45 -translate-y-1;
-  }
-}
-</style>
