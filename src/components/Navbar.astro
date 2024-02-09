@@ -2,8 +2,8 @@
 import NavbarItem from "./NavbarItem.astro"
 ---
 
-<nav class="flex items-center justify-between px-4 mt-2 w-full fixed will-change-transform">
-    <a class="z-20 text-xl text-white bg-blue-600 hover:bg-blue-700 rounded-lg px-4 py-2 active:scale-95 duration-150 align-middle" href="./">
+<nav id="navbar" class="flex items-center justify-between px-4 py-2 w-full fixed z-30">
+    <a class="z-20 text-xl text-white bg-blue-600 hover:bg-blue-700 rounded-lg px-4 py-2 active:scale-95 duration-150 align-middle" href="/">
       FastyUI
     </a>
 
@@ -14,12 +14,12 @@ import NavbarItem from "./NavbarItem.astro"
         <div aria-hidden="true" class="m-auto mt-2 h-0.5 w-6 rounded bg-sky-900 transition duration-300"></div>
       </label>
 
-      <div class="peer-checked:translate-x-0 fixed inset-0 w-56 translate-x-[-100%] bg-white border-r shadow-xl transition duration-300 lg:border-r-0 lg:w-auto lg:static lg:shadow-none lg:translate-x-0">
+      <div class="bg-transparent peer-checked:translate-x-0 fixed inset-0 w-56 translate-x-[-100%] bg-white border-r shadow-xl transition duration-300 lg:border-r-0 lg:w-auto lg:static lg:shadow-none lg:translate-x-0">
         <div class="flex flex-col h-full justify-between lg:items-center lg:flex-row">
           <ul class="font-bold ml-6 h-full flex flex-col items-start justify-center lg:ml-0 lg:h-auto lg:flex-row lg:items-center">
-            <NavbarItem href='./'>Inicio</NavbarItem>
-            <NavbarItem href='./'>Componentes</NavbarItem>
-            <NavbarItem href='./'>Acerca de</NavbarItem>
+            <NavbarItem href='/'>Inicio</NavbarItem>
+            <NavbarItem href='/componentes/introduccion'>Componentes</NavbarItem>
+            <NavbarItem href='/'>Acerca de</NavbarItem>
           </ul>
         </div>
       </div>
@@ -33,6 +33,21 @@ import NavbarItem from "./NavbarItem.astro"
       }
       .hamburger div:last-child {
         @apply -rotate-45 -translate-y-1;
+      }
+    }
+    #navbar {
+      animation: blur linear both;
+      animation-timeline: scroll();
+      animation-range: 0 100vh;
+    }
+    @keyframes blur {
+      from {
+        background: transparent;
+      }
+      to {
+        backdrop-filter: blur(4px);
+        @apply shadow-sm
+
       }
     }
     </style>
