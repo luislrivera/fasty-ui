@@ -1,14 +1,37 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
+import Button from '../components/Button.astro';
 ---
 <Layout title='Inicio'>
 
-  <header class="h-screen">
-    <Navbar />    
-    <main class="flex flex-col items-center justify-center h-full gap-6">
+  <header class="h-screen">  
+    <main class="text-pretty px-4 text-center flex flex-col items-center justify-center h-full gap-2">
+      <a class="bg-gray-50 hover:bg-gray-100 rounded-full shadow-md font-bold py-2 px-4 cursor-pointer inline-flex justify-between items-center active:scale-95 duration-150 gap-3">
+        <span class="rounded-full bg-blue-600 hover:bg-blue-700 px-2 py-1 -ml-2 text-white">
+          Nuevo
+        </span>
+        <span>
+          Ahora lo harás más rápido con nuestra extención para VS Code
+        </span>
+        <span>
+          <svg class="w-2.5 h-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"></path></svg>
+        </span>
+      </a>
       <h1 class="text-transparent font-bold text-6xl bg-gradient-to-r from-blue-700 via-purple-500 to-cyan-500 bg-clip-text">Construye sitios web hermosos</h1>
-      <h2 class="font -bold text-4xl">Céntrate en la lógica, nosotros en la UI</h2>
+      <h2 class="font-semibold text-4xl">Céntrate en la lógica, nosotros en la UI</h2>
+      <div class="mt-2">
+          <a href="/componentes/introduccion">
+            <Button class='bg-blue-600 hover:bg-blue-700'>
+              Empezar
+            </Button>
+          </a>
+        <Button class='bg-green-600 hover:bg-green-700'>
+          <a href="#">Ver componentes</a>
+        </Button>
+      </div>
     </main>
   </header>
+  <section class="min-h-screen">
+    <h2 class="font-bold text-center text-2xl">Mas de 100 componentes completamente listos para usar</h2>
+  </section>
 </Layout>
