@@ -1,0 +1,14 @@
+---
+const { frontmatter } = Astro.props;
+
+import Layout from "./Layout.astro";
+import SideBar from "../components/SideBar.astro"
+---
+<Layout title={frontmatter.title}>
+    <section class="flex flex-row">
+        <SideBar />
+        <section>
+            <h1>{frontmatter.title}</h1>
+        </section>
+    </section>
+</Layout>
